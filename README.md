@@ -1,6 +1,6 @@
-# My Paper Title
+# Lipschitz-Certifiable Training with a Tight Outer Bound
 
-This repository is the official implementation of [My Paper Title](https://arxiv.org/abs/2030.12345). 
+This repository is the official implementation of Lipschitz-Certifiable Training with a Tight Outer Bound.
 
 > 📋Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
 
@@ -9,24 +9,25 @@ This repository is the official implementation of [My Paper Title](https://arxiv
 To install requirements:
 
 ```setup
-pip install -r requirements.txt
+conda env create -f environment.yml
 ```
 
 > 📋Describe how to set up the environment, e.g. pip/conda/docker commands, download datasets, etc...
 
-## Training
+## Training (and Evaluation)
 
-To train the model(s) in the paper, run this command:
+To train and evaluate the model(s) in the paper, run this command:
 
 ```train
-python train.py --input-data <path_to_data> --alpha 10 --beta 20
+python main_mnist.py
+python main_cifar10.py
 ```
 
 > 📋Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
 
-## Evaluation
+## Evaluation of pretrained models
 
-To evaluate my model on ImageNet, run:
+To evaluate the pretrained model, run:
 
 ```eval
 python eval.py --model-file mymodel.pth --benchmark imagenet
@@ -46,11 +47,13 @@ You can download pretrained models here:
 
 Our model achieves the following performance on :
 
-### [Image Classification on ImageNet](https://paperswithcode.com/sota/image-classification-on-imagenet)
+### On MNIST
 
-| Model name         | Top 1 Accuracy  | Top 5 Accuracy |
-| ------------------ |---------------- | -------------- |
-| My awesome model   |     85%         |      95%       |
+| Model name         | Top 1 Accuracy  | Top 5 Accuracy | Top 5 Accuracy  |
+| ------------------ |---------------- | -------------- | --------------  |
+| BCP                |     85%         |      95%       | Top 5 Accuracy  |
+| BCP                |     85%         |      95%       | Top 5 Accuracy  |
+| BCP                |     85%         |      95%       | Top 5 Accuracy  |
 
 > 📋Include a table of results from your paper, and link back to the leaderboard for clarity and context. If your main result is a figure, include that figure and link to the command or notebook to reproduce it. 
 
