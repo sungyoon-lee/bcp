@@ -55,9 +55,9 @@ You can download pretrained models here:
 
 ## Results
 
-Our model achieves the following performance on :
+Our model achieves the following performance against $\ell_2$-perturbation :
 
-### MNIST
+### MNIST ($\epsilon_2=1.58$)
 
 | Model name         | Standard Accuracy  | PGD Accuracy | Verification Accuracy  |
 | ------------------ |---------------- | -------------- | --------------  |
@@ -65,7 +65,7 @@ Our model achieves the following performance on :
 | [CAP](https://arxiv.org/abs/1805.12514)                |     88.39%         |      62.25%       | 43.95%  |
 | [LMT](https://arxiv.org/abs/1802.04034)               |     86.48%         |      53.56%       | 40.55%  |
 
-### CIFAR-10
+### CIFAR-10 ($\epsilon_2=36/255$)
 
 | Model name         | Standard Accuracy  | PGD Accuracy | Verification Accuracy  |
 | ------------------ |---------------- | -------------- | --------------  |
