@@ -57,7 +57,7 @@ You can download pretrained models here:
 
 Our model achieves the following performance against $\ell_2$-perturbation :
 
-### MNIST ($\epsilon_2=1.58$)
+### MNIST ($\epsilon_2$=1.58)
 
 | Model name         | Standard Accuracy  | PGD Accuracy | Verification Accuracy  |
 | ------------------ |---------------- | -------------- | --------------  |
@@ -65,13 +65,19 @@ Our model achieves the following performance against $\ell_2$-perturbation :
 | [CAP](https://arxiv.org/abs/1805.12514)                |     88.39%         |      62.25%       | 43.95%  |
 | [LMT](https://arxiv.org/abs/1802.04034)               |     86.48%         |      53.56%       | 40.55%  |
 
-### CIFAR-10 ($\epsilon_2=36/255$)
+### CIFAR-10 ($\epsilon_2$=36/255)
 
 | Model name         | Standard Accuracy  | PGD Accuracy | Verification Accuracy  |
 | ------------------ |---------------- | -------------- | --------------  |
 | BCP                |     65.72%         |      60.78%       | 51.30%  |
 | [CAP](https://arxiv.org/abs/1805.12514)                |     60.10%         |      56.20%       | 50.87%  |
 | [LMT](https://arxiv.org/abs/1802.04034)               |     63.05%         |      58.32%       | 38.11%  |
+
+### Tiny ImageNet ($\epsilon_2$=36/255)
+
+| Model name         | Standard Accuracy  | PGD Accuracy | Verification Accuracy  |
+| ------------------ |---------------- | -------------- | --------------  |
+| BCP                |     28.76%         |      26.64%       | 20.08%  |
 
 <!----
 > 📋Include a table of results from your paper, and link back to the leaderboard for clarity and context. If your main result is a figure, include that figure and link to the command or notebook to reproduce it. 
