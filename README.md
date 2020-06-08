@@ -62,7 +62,7 @@ Our model achieves the following performance on :
 | Model name         | Standard Accuracy  | PGD Accuracy | Verification Accuracy  |
 | ------------------ |---------------- | -------------- | --------------  |
 | BCP                |     92.41%         |      64.70%       | 47.95%  |
-| BCP                |     88.39%         |      62.25%       | 43.95%  |
+| [Wong et al.](https://arxiv.org/abs/1805.12514)                |     88.39%         |      62.25%       | 43.95%  |
 | BCP                |     86.48%         |      53.56%       | 40.55%  |
 
 <!----
