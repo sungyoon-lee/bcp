@@ -57,13 +57,13 @@ You can download pretrained models here:
 
 Our model achieves the following performance on :
 
-### On MNIST
+### MNIST
 
-| Model name         | Top 1 Accuracy  | Top 5 Accuracy | Top 5 Accuracy  |
+| Model name         | Standard Accuracy  | PGD Accuracy | Verification Accuracy  |
 | ------------------ |---------------- | -------------- | --------------  |
-| BCP                |     85%         |      95%       | Top 5 Accuracy  |
-| BCP                |     85%         |      95%       | Top 5 Accuracy  |
-| BCP                |     85%         |      95%       | Top 5 Accuracy  |
+| BCP                |     92.41%         |      64.70%       | 47.95%  |
+| BCP                |     88.39%         |      62.25%       | 43.95%  |
+| BCP                |     86.48%         |      53.56%       | 40.55%  |
 
 <!----
 > 📋Include a table of results from your paper, and link back to the leaderboard for clarity and context. If your main result is a figure, include that figure and link to the command or notebook to reproduce it. 
