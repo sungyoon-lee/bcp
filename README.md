@@ -36,7 +36,8 @@ python main_cifar10.py
 To evaluate the pretrained model, run:
 
 ```eval
-python eval.py --model-file mymodel.pth --benchmark imagenet
+python evaluation_mnist.py --test_pth mnist_save.pth
+python evaluation_cifar10.py --test_pth cifar10_save.pth
 ```
 
 <!----
@@ -47,7 +48,7 @@ python eval.py --model-file mymodel.pth --benchmark imagenet
 
 You can download pretrained models here:
 
-- [My awesome model](https://drive.google.com/mymodel.pth) trained on ImageNet using parameters x,y,z. 
+- [BCP model](https://drive.google.com/mymodel.pth) trained on ImageNet using parameters x,y,z. 
 
 <!----
 > 📋Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
