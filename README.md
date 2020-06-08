@@ -2,7 +2,9 @@
 
 This repository is the official implementation of Lipschitz-Certifiable Training with a Tight Outer Bound.
 
+<!----
 > 📋Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
+----!>
 
 ## Requirements
 
