@@ -36,8 +36,8 @@ python main_cifar10.py
 To evaluate the pretrained model, run:
 
 ```eval
-python evaluation_mnist.py --test_pth mnist_save.pth
-python evaluation_cifar10.py --test_pth cifar10_save.pth
+python evaluation_mnist.py --test_pth pretrained/mnist_save.pth
+python evaluation_cifar10.py --test_pth pretrained/cifar10_save.pth
 ```
 
 <!----
