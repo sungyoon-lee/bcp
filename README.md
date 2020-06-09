@@ -72,6 +72,16 @@ Our model achieves the following performance against $\ell_2$-perturbation :
 
 ### CIFAR-10 ($\epsilon_2$=36/255)
 
+Model1
+
+| Model name         | Standard Accuracy  | PGD Accuracy | Verification Accuracy  |
+| ------------------ |---------------- | -------------- | --------------  |
+| BCP                |     65.64         |      59.59%       | 50.27%  |
+| [CAP](https://arxiv.org/abs/1805.12514)                |     60.14%         |      55.67%       | 50.29%  |
+| [LMT](https://arxiv.org/abs/1802.04034)               |     56.49%         |      49.83%       | 37.20%  |
+
+Model2
+
 | Model name         | Standard Accuracy  | PGD Accuracy | Verification Accuracy  |
 | ------------------ |---------------- | -------------- | --------------  |
 | BCP                |     65.72%         |      60.78%       | 51.30%  |
