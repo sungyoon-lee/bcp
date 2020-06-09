@@ -74,7 +74,7 @@ Our model achieves the following performance against $\ell_2$-perturbation :
 
 Model1
 
-| Model name         | Standard Accuracy  | PGD^100 Accuracy | Verification Accuracy  |
+| Model name         | Standard  | PGD^100 | Verification  |
 | ------------------ |---------------- | -------------- | --------------  |
 | BCP                |     65.64         |      59.59%       | 50.27%  |
 | [CAP](https://arxiv.org/abs/1805.12514)                |     60.14%         |      55.67%       | 50.29%  |
@@ -82,7 +82,7 @@ Model1
 
 Model2
 
-| Model name         | Standard Accuracy  | PGD^100 Accuracy | Verification Accuracy  |
+| Model name         | Standard  | PGD^100 | Verification  |
 | ------------------ |---------------- | -------------- | --------------  |
 | BCP                |     65.72%         |      60.78%       | 51.30%  |
 | [CAP](https://arxiv.org/abs/1805.12514)                |     60.10%         |      56.20%       | 50.87%  |
@@ -90,7 +90,7 @@ Model2
 
 ### Tiny ImageNet ($\epsilon_2$=36/255)
 
-| Model name         | Standard Accuracy  | PGD^100 Accuracy | Verification Accuracy  |
+| Model name         | Standard  | PGD^100 | Verification  |
 | ------------------ |---------------- | -------------- | --------------  |
 | BCP                |     28.76%         |      26.64%       | 20.08%  |
 
