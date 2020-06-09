@@ -48,7 +48,8 @@ python evaluation_cifar10.py --test_pth pretrained/cifar10_save.pth
 
 You can download pretrained models here:
 
-- [BCP model](https://drive.google.com/mymodel.pth) trained on ImageNet using parameters x,y,z. 
+- [BCP model](https://drive.google.com/file/d/17MsumEnGQvpMQaXMXRZK4xK8mpnO0oRz/view?usp=sharing) trained on MNIST.
+- [BCP model](https://drive.google.com/file/d/1MuXNJ63_HwzKtBMrRlvrLGIzD3FhH-Ov/view?usp=sharing) trained on CIFAR-10.
 
 <!----
 > 📋Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
