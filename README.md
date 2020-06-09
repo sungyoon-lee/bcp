@@ -66,7 +66,7 @@ Our model achieves the following performance against $\ell_2$-perturbation :
 
 | Model name         | Standard  | PGD^100 | Verification  |
 | ------------------ |---------------- | -------------- | --------------  |
-| BCP                |     92.41%         |      64.70%       | 47.95%  |
+| BCP                |     92.54%         |      66.23%       | 48.20%  |
 | [CAP](https://arxiv.org/abs/1805.12514)                |     88.39%         |      62.25%       | 43.95%  |
 | [LMT](https://arxiv.org/abs/1802.04034)               |     86.48%         |      53.56%       | 40.55%  |
 
