@@ -64,7 +64,7 @@ Our model achieves the following performance against $\ell_2$-perturbation :
 
 ### MNIST ($\epsilon_2$=1.58)
 
-| Model name         | Standard Accuracy  | PGD^100 Accuracy | Verification Accuracy  |
+| Model name         | Standard  | PGD^100 | Verification  |
 | ------------------ |---------------- | -------------- | --------------  |
 | BCP                |     92.41%         |      64.70%       | 47.95%  |
 | [CAP](https://arxiv.org/abs/1805.12514)                |     88.39%         |      62.25%       | 43.95%  |
