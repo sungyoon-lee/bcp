@@ -2,6 +2,8 @@
 
 This repository is the official implementation of BCP, Box Constraints Propagation (Lipschitz-Certifiable Training with a Tight Outer Bound).
 
+![Illustration](./media/Illustration.png)
+
 <!----
 > 📋Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
 ---->
