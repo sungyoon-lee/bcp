@@ -61,6 +61,7 @@ python evaluation_cifar10.py --test_pth pretrained/cifar10_save.pth
 ---->
 
 ## Results
+![Results](./media/result_CIFAR.png)
 
 Our model achieves the following performance against $\ell_2$-perturbation :
 
