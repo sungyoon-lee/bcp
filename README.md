@@ -22,7 +22,7 @@ conda env create -f environment.yml
 
 ## Training (and Evaluation)
 
-To train and evaluate the model(s) in the paper, run this command:
+To train a certifiably robust model with the proposed method, run this command:
 
 ```train
 python main_mnist.py
