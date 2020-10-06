@@ -18,7 +18,7 @@ from torch import autograd
 
 from torch.utils.data import Dataset, DataLoader, TensorDataset
 from torch.optim.lr_scheduler import StepLR, MultiStepLR
-import utils, data_load, BCP, IBP
+import utils, data_load, BCP
 
 if __name__ == "__main__":
     args = utils.argparser()
@@ -51,6 +51,6 @@ if __name__ == "__main__":
         last_err = BCP.evaluate_BCP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args, None)
 #     if args.method=='SR':
 #         last_err = SR.evaluate_BCP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args, u_list)
-    elif args.method=='IBP':
-        last_err = IBP.evaluate_IBP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args)
+#     elif args.method=='IBP':
+#         last_err = IBP.evaluate_IBP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args)
     print('Best model evaluation:', std_err.item(), pgd_err.item(), last_err.item())
