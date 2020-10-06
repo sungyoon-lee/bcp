@@ -62,11 +62,10 @@ python evaluation_cifar10.py --test_pth pretrained/cifar10_save.pth
 
 ## Results
 
-Our model achieves the following performance against $\ell_2$-perturbation :
+Our model achieves the following performance against $\ell_2$-perturbation compared to state-of-the-art methods ([CAP](https://arxiv.org/abs/1805.12514), [LMT](https://arxiv.org/abs/1802.04034), [IBP](https://arxiv.org/abs/1810.12715)) :
 
 ### MNIST ($\epsilon_2$=1.58)
 
-![Results](./media/result_MNIST.png)
 | Model name         | Standard  | PGD^100 | Verification  |
 | ------------------ |---------------- | -------------- | --------------  |
 | BCP                |     92.54%         |      66.23%       | 48.20%  |
