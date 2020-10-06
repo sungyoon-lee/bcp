@@ -27,8 +27,8 @@ if __name__ == "__main__":
     setproctitle.setproctitle(args.prefix)
     train_log = open(args.prefix + "_train.log", "w")
     test_log = open(args.prefix + "_test.log", "w")
-    train_loader, _ = data_load.data_loaders(args.data, args.batch_size, args.normalization, args.augmentation, args.drop_last, args.shuffle)
-    _, test_loader = data_load.data_loaders(args.data, args.test_batch_size, args.normalization, args.augmentation, args.drop_last, args.shuffle)
+    train_loader, _ = data_load.data_loaders(args.data, args.batch_size, args.augmentation, args.normalization, args.drop_last, args.shuffle)
+    _, test_loader = data_load.data_loaders(args.data, args.test_batch_size, args.augmentation, args.normalization, args.drop_last, args.shuffle)
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed(args.seed)
 
