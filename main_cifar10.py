@@ -18,7 +18,7 @@ from torch import autograd
 
 from torch.utils.data import Dataset, DataLoader, TensorDataset
 from torch.optim.lr_scheduler import StepLR, MultiStepLR
-import utils, data_load, BCP, IBP
+import utils, data_load, BCP
 
 if __name__ == "__main__":
     args = utils.argparser()
@@ -94,12 +94,12 @@ if __name__ == "__main__":
 #             print('Taken', time.time()-st, 's/epoch')
             
 #             err = SR1.evaluate_BCP(test_loader, model[-1], args.epsilon, t, test_log, args.verbose, args, u_list)
-        elif args.method == 'IBP' and args.warmup <= t:
-            st = time.time()
-            IBP.train_IBP(train_loader, model[-1], opt, epsilon, kappa, t, train_log, args.verbose, args)
-            print('Taken', time.time()-st, 's/epoch')
+#         elif args.method == 'IBP' and args.warmup <= t:
+#             st = time.time()
+#             IBP.train_IBP(train_loader, model[-1], opt, epsilon, kappa, t, train_log, args.verbose, args)
+#             print('Taken', time.time()-st, 's/epoch')
             
-            err = IBP.evaluate_IBP(test_loader, model[-1], args.epsilon, t, test_log, args.verbose, args)
+#             err = IBP.evaluate_IBP(test_loader, model[-1], args.epsilon, t, test_log, args.verbose, args)
             
         if err < best_err and args.save: 
             print('Best Error Found! %.3f'%err)
@@ -134,6 +134,6 @@ if __name__ == "__main__":
         last_err = BCP.evaluate_BCP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args, u_list)
 #     if args.method=='SR':
 #         last_err = SR.evaluate_BCP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args, u_list)
-    elif args.method=='IBP':
-        last_err = IBP.evaluate_IBP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args)
+#     elif args.method=='IBP':
+#         last_err = IBP.evaluate_IBP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args)
     print('Best model evaluation:', std_err.item(), pgd_err.item(), last_err.item())
