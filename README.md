@@ -61,12 +61,12 @@ python evaluation_cifar10.py --test_pth pretrained/cifar10_save.pth
 ---->
 
 ## Results
-![Results](./media/result_CIFAR.png)
 
 Our model achieves the following performance against $\ell_2$-perturbation :
 
 ### MNIST ($\epsilon_2$=1.58)
 
+![Results](./media/result_MNIST.png)
 | Model name         | Standard  | PGD^100 | Verification  |
 | ------------------ |---------------- | -------------- | --------------  |
 | BCP                |     92.54%         |      66.23%       | 48.20%  |
@@ -75,6 +75,8 @@ Our model achieves the following performance against $\ell_2$-perturbation :
 
 ### CIFAR-10 ($\epsilon_2$=36/255)
 
+![Results](./media/result_CIFAR.png)
+<!---
 Model1
 
 | Model name         | Standard  | PGD^100 | Verification  |
@@ -90,6 +92,7 @@ Model2
 | BCP                |     65.72%         |      60.78%       | 51.30%  |
 | [CAP](https://arxiv.org/abs/1805.12514)                |     60.10%         |      56.20%       | 50.87%  |
 | [LMT](https://arxiv.org/abs/1802.04034)               |     63.05%         |      58.32%       | 38.11%  |
+-->
 
 ### Tiny ImageNet ($\epsilon_2$=36/255)
 
