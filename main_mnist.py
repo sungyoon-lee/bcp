@@ -59,11 +59,7 @@ if __name__ == "__main__":
                                args.kappa,                                
                                args.kappa_schedule_length)
     u_list = None
-    for t in range(args.epochs): 
-        if args.lr_scheduler == 'step': 
-            lr_scheduler.step(epoch=max(t-len(eps_schedule)-args.warmup, 0))
-        elif args.lr_scheduler =='multistep':
-            lr_scheduler.step(epoch=t)      
+    for t in range(args.epochs):    
             
         if t < args.warmup:
             epsilon = 0
@@ -90,6 +86,12 @@ if __name__ == "__main__":
                 
             err = BCP.evaluate_BCP(test_loader, model[-1], args.epsilon, t, test_log, args.verbose, args, u_list)
             print(err, best_err)
+            
+        if args.lr_scheduler == 'step': 
+            lr_scheduler.step(epoch=max(t-len(eps_schedule)-args.warmup, 0))
+        elif args.lr_scheduler =='multistep':
+            lr_scheduler.step(epoch=t)   
+            
         if err < best_err and args.save: 
             print('Best Error Found! %.3f'%err)
             best_err = err
