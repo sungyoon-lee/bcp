@@ -10,7 +10,7 @@ This repository is the official implementation of BCP (Box Constraint Propagatio
 
 ## Requirements
 
-To install requirements:
+To install requirements, modify environment.yml and run this command:
 
 ```setup
 conda env create -f environment.yml
