@@ -85,7 +85,7 @@ if __name__ == "__main__":
             print('Taken', time.time()-st, 's/epoch')
                 
             err = BCP.evaluate_BCP(test_loader, model[-1], args.epsilon, t, test_log, args.verbose, args, u_list)
-            print(err, best_err)
+            print("Error: %.4f, Best Error: %.4f'%(err.data.cpu().item(), best_err))
             
         if args.lr_scheduler == 'step': 
             lr_scheduler.step(epoch=max(t-len(eps_schedule)-args.warmup, 0))
