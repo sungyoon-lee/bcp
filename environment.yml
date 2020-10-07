@@ -3,10 +3,9 @@ channels:
   - pytorch
   - defaults
 dependencies:
-  - pillow=5.4.1=py36h34e0f95_0
-  - pytorch=1.0.0=py3.6_cuda10.0.130_cudnn7.4.1_1
-  - scipy=1.2.1=py36h7c811a0_0
-  - torchvision=0.2.1=py36_0
+  - pytorch=1.3.1
+  - scipy=1.3.1
+  - torchvision=0.4.2
   - pip:
     - setproctitle==1.1.10
 prefix: /home/slcf/anaconda3/bcp_env
