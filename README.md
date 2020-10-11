@@ -2,7 +2,7 @@
 
 This repository is the official implementation of BCP (Box Constraint Propagation) by Sungyoon Lee, Jaewook Lee, and Saerom Park.
 
-BCP is a certified defense method against l2-norm bounded perturbations.
+BCP is a certified defense method against l_2-norm (or l_p, p>0) bounded perturbations.
 It propagates a box constraint in addition to the Lipschitz outer bound to obtain a tighter outer bound.
 The propagation scheme is briefly illustrated as follows:
 ![Propagation](./media/Illustration.png)
