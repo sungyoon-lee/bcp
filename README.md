@@ -2,7 +2,7 @@
 
 This repository is the official implementation of BCP (Box Constraint Propagation) by Sungyoon Lee, Jaewook Lee, and Saerom Park.
 
-BCP is a certified adversarial defense method against <a href="https://www.codecogs.com/eqnedit.php?latex=l_2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?l_2" title="l_2" /></a>-norm __l__<sub>2</sub>-norm (or __l__<sub>p</sub>-norm, p>0) bounded perturbations.
+BCP is a certified adversarial defense method against <a href="https://www.codecogs.com/eqnedit.php?latex=l_2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?l_2" title="l_2" /></a>-norm (or <a href="https://www.codecogs.com/eqnedit.php?latex=l_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?l_p" title="l_p" /></a>-norm) bounded perturbations.
 It propagates a box constraint in addition to the Lipschitz outer bound to obtain a tighter outer bound.
 The propagation scheme is briefly illustrated as follows:
 ![Propagation](./media/Illustration.png)
@@ -10,6 +10,8 @@ The propagation scheme is briefly illustrated as follows:
 By introducing additional box constraint, we can cut off the area below the red line from the Lipschitz outer bound (the elliptic area) in the following visualization.
 
 <!----
+__l__<sub>2</sub>-norm
+__l__<sub>p</sub>-norm, p>0
 ![Tightening](./media/Tightening.png)
 ---->
 <img src="./media/Tightening.png" width="500">
