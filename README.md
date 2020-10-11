@@ -76,7 +76,7 @@ python evaluation_cifar10.py --test_pth pretrained/cifar10_save.pth
 
 ## Results
 
-Our model achieves the following performance against $\ell_2$-perturbation compared to state-of-the-art methods ([CAP](https://arxiv.org/abs/1805.12514), [LMT](https://arxiv.org/abs/1802.04034), [IBP](https://arxiv.org/abs/1810.12715)) :
+Our model achieves the following performance against _l_<sub>2</sub>-perturbation compared to state-of-the-art methods ([CAP](https://arxiv.org/abs/1805.12514), [LMT](https://arxiv.org/abs/1802.04034), [IBP](https://arxiv.org/abs/1810.12715)) :
 
 ### CIFAR-10 (&epsilon;<sub>2</sub>=36/255)
 
