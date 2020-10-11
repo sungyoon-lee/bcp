@@ -2,7 +2,7 @@
 
 This repository is the official implementation of BCP (Box Constraint Propagation) by Sungyoon Lee, Jaewook Lee, and Saerom Park.
 
-BCP is a certified adversarial defense method against l_2-norm (or l_p-norm, p>0) bounded perturbations.
+BCP is a certified adversarial defense method against __l__<sub>2</sub>-norm (or __l__<sub>p</sub>-norm, p>0) bounded perturbations.
 It propagates a box constraint in addition to the Lipschitz outer bound to obtain a tighter outer bound.
 The propagation scheme is briefly illustrated as follows:
 ![Propagation](./media/Illustration.png)
@@ -75,14 +75,14 @@ python evaluation_cifar10.py --test_pth pretrained/cifar10_save.pth
 
 Our model achieves the following performance against $\ell_2$-perturbation compared to state-of-the-art methods ([CAP](https://arxiv.org/abs/1805.12514), [LMT](https://arxiv.org/abs/1802.04034), [IBP](https://arxiv.org/abs/1810.12715)) :
 
-### CIFAR-10 ($\epsilon_2$=36/255) &epsilon_2; &epsilon;
+### CIFAR-10 (&epsilon;<sub>2</sub>=36/255)
 
 <!----
 ![Results](./media/result_CIFAR.png)
 ---->
 <img src="./media/result_CIFAR.png" width="500">
 
-### MNIST ($\epsilon_2$=1.58)
+### MNIST (&epsilon;<sub>2</sub>=1.58)
 
 | Model name         | Standard  | PGD^100 | Verification  |
 | ------------------ |---------------- | -------------- | --------------  |
@@ -108,7 +108,7 @@ Model2
 | [LMT](https://arxiv.org/abs/1802.04034)               |     63.05%         |      58.32%       | 38.11%  |
 -->
 
-### Tiny ImageNet ($\epsilon_2$=36/255)
+### Tiny ImageNet (&epsilon;<sub>2</sub>=36/255)
 
 | Model name         | Standard  | PGD^100 | Verification  |
 | ------------------ |---------------- | -------------- | --------------  |
