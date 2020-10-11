@@ -1,8 +1,16 @@
 # Lipschitz-Certifiable Training with a Tight Outer Bound
 
-This repository is the official implementation of BCP (Box Constraint Propagation).
+This repository is the official implementation of BCP (Box Constraint Propagation) by Sungyoon Lee, Jaewook Lee, and Saerom Park.
 
-![Illustration](./media/Illustration.png)
+BCP is a certified defense method against l2-norm bounded perturbations.
+
+BCP propagate a box constraint in addition to the Lipschitz outer bound to obtain a tighter outer bound.
+
+The propagation scheme is briefly illustrated as follows:
+![Propagation](./media/Illustration.png)
+
+By introducing additional box constraint, we can cut off the area below the red line from the Lipschitz outer bound (25-55\% tightening effect).
+![Tightening](./media/Tightening.png)
 
 <!----
 > 📋Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
