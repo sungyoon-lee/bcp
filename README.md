@@ -9,7 +9,7 @@ The propagation scheme is briefly illustrated as follows:
 
 By introducing additional box constraint, we can cut off the area below the red line from the Lipschitz outer bound (the elliptic area) in the following visualization.
 
-![Tightening](./media/Tightening.png =250x)
+![Tightening](./media/Tightening.png){ width=50% }
 
 <!----
 > 📋Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
