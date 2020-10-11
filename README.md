@@ -7,7 +7,7 @@ It propagates a box constraint in addition to the Lipschitz outer bound to obtai
 The propagation scheme is briefly illustrated as follows:
 ![Propagation](./media/Illustration.png)
 
-By introducing additional box constraint, we can cut off the area below the red line from the Lipschitz outer bound.
+By introducing additional box constraint, we can cut off the area below the red line from the Lipschitz outer bound (the elliptic area).
 
 ![Tightening](./media/Tightening.png)
 
