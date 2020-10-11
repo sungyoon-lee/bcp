@@ -77,7 +77,10 @@ Our model achieves the following performance against $\ell_2$-perturbation compa
 
 ### CIFAR-10 ($\epsilon_2$=36/255)
 
+<!----
 ![Results](./media/result_CIFAR.png)
+---->
+<img src="./media/result_CIFAR.png" width="500">
 
 ### MNIST ($\epsilon_2$=1.58)
 
