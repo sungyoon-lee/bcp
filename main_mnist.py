@@ -3,8 +3,6 @@
 ### basic modules
 import numpy as np
 import time, pickle, os, sys, json, PIL, tempfile, warnings, importlib, math, copy, shutil, setproctitle
-# import seaborn as sns
-# import matplotlib.pyplot as plt
 
 ### torch modules
 import torch
@@ -21,7 +19,7 @@ from torch.optim.lr_scheduler import StepLR, MultiStepLR
 import utils, data_load, BCP
 
 if __name__ == "__main__":
-    args = utils.argparser(data='mnist',epsilon=1.58,epsilon_infty=0.1,epochs=60,rampup=20,wd_list=[21,30,40],warmup=1,opt_iter=10)
+    args = utils.argparser(data='mnist',epsilon=1.58,epsilon_infty=0.1,epochs=60,rampup=20,wd_list=[21,30,40],warmup=1,opt_iter=10,test_sniter=5000)
     print(args)
     print('saving file to {}'.format(args.prefix))
     setproctitle.setproctitle(args.prefix)
