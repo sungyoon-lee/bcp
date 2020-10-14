@@ -8,5 +8,5 @@ dependencies:
   - torchvision=0.4.2
   - pip:
     - setproctitle==1.1.10
-prefix: /home/slcf/anaconda3/bcp_env
+prefix: /home/anaconda3/bcp_env
 
