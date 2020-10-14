@@ -3,8 +3,6 @@
 ### basic modules
 import numpy as np
 import time, pickle, os, sys, json, PIL, tempfile, warnings, importlib, math, copy, shutil, setproctitle
-# import sea/born as sns
-# import matplotlib.pyplot as plt
 
 ### torch modules
 import torch
@@ -31,26 +29,21 @@ if __name__ == "__main__":
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed(args.seed)
 
-        
-    args.sniter = 1000000
     args.opt_max = 10000
     args.print = True
     t = 100
     try:
         aa = torch.load(args.test_pth)['state_dict'][0]
     except:
-        aa = torch.load(args.test_pth)
+        aa = torch.load(args.test_pth)['state_dict']
+
     model_eval = utils.select_model(args.data, args.model)
     model_eval.load_state_dict(aa)
     print('std testing ...')
     std_err = utils.evaluate(test_loader, model_eval, t, test_log, args.verbose)
-    print('pgd testing ...')
-    pgd_err = utils.evaluate_pgd(test_loader, model_eval, args)
     print('verification testing ...')
     if args.method=='BCP':
         last_err = BCP.evaluate_BCP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args, None)
-#     if args.method=='SR':
-#         last_err = SR.evaluate_BCP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args, u_list)
-#     elif args.method=='IBP':
-#         last_err = IBP.evaluate_IBP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args)
+    print('pgd testing ...')
+    pgd_err = utils.evaluate_pgd(test_loader, model_eval, args)
     print('Best model evaluation:', std_err.item(), pgd_err.item(), last_err.item())
