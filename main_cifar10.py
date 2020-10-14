@@ -3,8 +3,6 @@
 ### basic modules
 import numpy as np
 import time, pickle, os, sys, json, PIL, tempfile, warnings, importlib, math, copy, shutil, setproctitle
-# import seaborn as sns
-# import matplotlib.pyplot as plt
 
 ### torch modules
 import torch
@@ -88,18 +86,6 @@ if __name__ == "__main__":
             print('Taken', time.time()-st, 's/epoch')
             
             err = BCP.evaluate_BCP(test_loader, model[-1], args.epsilon, t, test_log, args.verbose, args, u_list)
-#         elif args.method == 'SR' and args.warmup <= t:
-#             st = time.time()
-#             u_list = SR1.train_BCP(train_loader, model[-1], opt, epsilon, kappa, t, train_log, args.verbose, args, u_list)
-#             print('Taken', time.time()-st, 's/epoch')
-            
-#             err = SR1.evaluate_BCP(test_loader, model[-1], args.epsilon, t, test_log, args.verbose, args, u_list)
-#         elif args.method == 'IBP' and args.warmup <= t:
-#             st = time.time()
-#             IBP.train_IBP(train_loader, model[-1], opt, epsilon, kappa, t, train_log, args.verbose, args)
-#             print('Taken', time.time()-st, 's/epoch')
-            
-#             err = IBP.evaluate_IBP(test_loader, model[-1], args.epsilon, t, test_log, args.verbose, args)
             
         if err < best_err and args.save: 
             print('Best Error Found! %.3f'%err)
@@ -132,8 +118,4 @@ if __name__ == "__main__":
     print('verification testing ...')
     if args.method=='BCP':
         last_err = BCP.evaluate_BCP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args, u_list)
-#     if args.method=='SR':
-#         last_err = SR.evaluate_BCP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args, u_list)
-#     elif args.method=='IBP':
-#         last_err = IBP.evaluate_IBP(test_loader, model_eval, args.epsilon, t, test_log, args.verbose, args)
     print('Best model evaluation:', std_err.item(), pgd_err.item(), last_err.item())
