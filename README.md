@@ -42,6 +42,7 @@ To train a certifiably robust model with the proposed method, run this command:
 python main_mnist.py
 python main_cifar10.py
 ```
+See BCP-train-demo-cifar10.ipynb for more details
 
 <!----
 > 📋Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
