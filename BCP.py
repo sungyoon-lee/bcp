@@ -3,8 +3,6 @@
 ### basic modules
 import numpy as np
 import time, pickle, os, sys, json, PIL, tempfile, warnings, importlib, math, copy, shutil, setproctitle
-# import seaborn as sns
-# import matplotlib.pyplot as plt
 
 ### torch modules
 import torch
@@ -428,18 +426,8 @@ def BCP_translation(mu_prev, r_prev, ibp_mu_prev, ibp_r_prev, W, opt_iter, show)
 
         in_sample = ((wi_wj1>lb)*(wi_wj1<ub)).type(torch.float) 
         enlarged_part = ratio*diag_zero*wi_wj1*in_sample 
-
-        if (r_before!=r_before).sum():
-            print('NaN')
-            print(opt_iter)
-            print(inner_prod)
-            return inner_prod
         
         new_wi_wj = (after_clipped + enlarged_part)
-        if torch.isnan(new_wi_wj).sum()>0:
-            print('NanNan')
-            print(opt_iter)
-            return inner_prod
 
         inner_prod  = (wi_wj_rep*new_wi_wj).sum(-1)
 
@@ -466,10 +454,6 @@ def translation(mu, translation, onehot_y):
     # delta: b,10
     translated_logit = mu+((delta)*(1-onehot_y))
     return translated_logit
-    
-#     another_translation = another_translation(mu_prev, r_prev, W)
-#     another_logit = translation(mu, another_translation, onehot_y)
-#     another_loss = nn.CrossEntropyLoss()(another_logit, y)    
 
 def ibp_translation(ibp_mu_prev, ibp_r_prev, W): ################# bottle neck
     EPS = 1e-24
@@ -522,7 +506,7 @@ def power_iteration_evl(A, num_simulations, u=None):
         u = torch.randn((A.size()[0],1)).cuda()
         
     B = A.t()
-#     with torch.no_grad():
+    normAest = (A.abs().max()*A.abs().sum()).sqrt().data.cpu().numpy()
     for i in range(num_simulations):
         u1 = B.mm(u)
         u1_norm = u1.norm(2)
@@ -533,7 +517,7 @@ def power_iteration_evl(A, num_simulations, u=None):
         v1_norm = v1.norm(2)
         u = v1 / v1_norm
 
-        if (u-u_tmp).norm(2)<1e-3 or (i+1)==num_simulations: ### https://www.cs.cornell.edu/~bindel/class/cs6210-f16/lec/2016-10-17.pdf
+        if (u-u_tmp).norm(2)<1e-5 or (i+1)==num_simulations:
             break
         
     out = u.t().mm(A).mm(v)[0][0]
@@ -552,7 +536,6 @@ def power_iteration_conv_evl(mu, layer, num_simulations, u=None):
         b=torch.zeros_like(layer.bias)
     else:
         b = None
-#     with torch.no_grad():
     for i in range(num_simulations):
         u1 = _conv2d(u, W, b, stride=layer.stride, padding=layer.padding)
         u1_norm = u1.norm(2)
@@ -567,7 +550,7 @@ def power_iteration_conv_evl(mu, layer, num_simulations, u=None):
         v1_norm = v1.norm(2)
         u = v1 / (v1_norm+EPS)
 
-        if (u-u_tmp).norm(2)<1e-3 or (i+1)==num_simulations:
+        if (u-u_tmp).norm(2)<1e-5 or (i+1)==num_simulations:
             break
         
     out = (v*(_conv2d(u, W, b, stride=layer.stride, padding=layer.padding))).view(v.size()[0],-1).sum(1)[0]
