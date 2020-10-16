@@ -24,7 +24,7 @@ __l__<sub>p</sub>-norm, p>0
 
 ## Requirements
 
-To install requirements, modify environment.yml and run this command:
+To install requirements, modify `environment.yml` and run this command:
 
 ```setup
 conda env create -f environment.yml
@@ -63,7 +63,7 @@ You can download pretrained models here:
 
 ## Evaluation of pretrained models
 
-After downloading the pretrained models to the directory ./pretrained, you are ready to evaluate them.
+After downloading the pretrained models to the directory `./pretrained`, you are ready to evaluate them.
 To evaluate the pretrained model, run:
 
 ```eval
