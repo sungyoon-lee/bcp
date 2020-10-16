@@ -18,10 +18,6 @@ __l__<sub>p</sub>-norm, p>0
 <img src="./media/Tightening.png" width="500">
 
 
-<!----
-> 📋Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
----->
-
 ## Requirements
 
 To install requirements, modify `environment.yml` and run this command:
@@ -30,9 +26,6 @@ To install requirements, modify `environment.yml` and run this command:
 conda env create -f environment.yml
 ```
 
-<!----
-> 📋Describe how to set up the environment, e.g. pip/conda/docker commands, download datasets, etc...
----->
 
 ## Training (and Evaluation)
 
@@ -42,11 +35,7 @@ To train a certifiably robust model with the proposed method, run this command:
 python train_mnist.py
 python train_cifar10.py
 ```
-See demo_cifar10.ipynb for more details
-
-<!----
-> 📋Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
----->
+See `demo_cifar10.ipynb` for more details
 
 
 ## Pre-trained Models
@@ -57,9 +46,6 @@ You can download pretrained models here:
 - [BCP model](https://drive.google.com/file/d/1MuXNJ63_HwzKtBMrRlvrLGIzD3FhH-Ov/view?usp=sharing) trained on CIFAR-10.
 
 
-<!----
-> 📋Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
----->
 
 ## Evaluation of pretrained models
 
@@ -71,9 +57,6 @@ python evaluate_mnist.py --test_pth pretrained/mnist_save.pth
 python evaluate_cifar10.py --test_pth pretrained/cifar10_save.pth
 ```
 
-<!----
-> 📋Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
----->
 
 ## Results
 
@@ -118,13 +101,6 @@ Model2
 | ------------------ |---------------- | -------------- | --------------  |
 | BCP                |     28.76%         |      26.64%       | 20.08%  |
 
-<!----
-> 📋Include a table of results from your paper, and link back to the leaderboard for clarity and context. If your main result is a figure, include that figure and link to the command or notebook to reproduce it. 
----->
 
-<!----
-## Contributing
-> 📋Pick a licence and describe how to contribute to your code repository. 
----->
 
 keywords: deep learning, robustness, adversarial examples, adversarial training, certified defense
