@@ -158,7 +158,7 @@ def argparser(data='cifar10', model='large',
             raise ValueError('Schedule length for epsilon ({}) is greater than '
                              'number of epochs ({})'.format(args.schedule_length, args.epochs))
     else: 
-        args.prefix = 'temporary'
+        args.prefix = 'models/'+args.data+'/temporary'
 
     if args.cuda_ids is not None: 
         print('Setting CUDA_VISIBLE_DEVICES to {}'.format(args.cuda_ids))
