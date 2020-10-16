@@ -39,10 +39,10 @@ conda env create -f environment.yml
 To train a certifiably robust model with the proposed method, run this command:
 
 ```train
-python main_mnist.py
-python main_cifar10.py
+python train_mnist.py
+python train_cifar10.py
 ```
-See BCP-train-demo-cifar10.ipynb for more details
+See demo_cifar10.ipynb for more details
 
 <!----
 > 📋Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
@@ -67,8 +67,8 @@ After downloading the pretrained models to the directory ./pretrained, you are r
 To evaluate the pretrained model, run:
 
 ```eval
-python evaluation_mnist.py --test_pth pretrained/mnist_save.pth
-python evaluation_cifar10.py --test_pth pretrained/cifar10_save.pth
+python evaluate_mnist.py --test_pth pretrained/mnist_save.pth
+python evaluate_cifar10.py --test_pth pretrained/cifar10_save.pth
 ```
 
 <!----
