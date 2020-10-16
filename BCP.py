@@ -70,8 +70,8 @@ def train_BCP(loader, model, opt, epsilon, kappa, epoch, log, verbose, args, u_l
         print(epoch, i, bcp_loss.detach().item(), 
                 bcp_err.item(), ce.item(), err.item(), file=log)
               
-        if verbose and (i==0 or (i+1) % verbose == 0): 
-            endline = '\n' if (i==0 or (i+1) % verbose == 0) else '\r'
+        if verbose and (i==0 or i==len(loader)-1 or (i+1) % verbose == 0): 
+            endline = '\n' if (i==0 or i==len(loader)-1 or (i+1) % verbose == 0) else '\r'
             print('Epoch: [{0}][{1}/{2}]\t'
                   'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
                   'Eps {eps:.3f}\t'
@@ -140,9 +140,9 @@ def evaluate_BCP(loader, model, epsilon, epoch, log, verbose, args, u_list):
 
         print(epoch, i, bcp_loss.item(), bcp_err.item(), ce.item(), err.item(),
            file=log)
-        if verbose and not args.print: 
-            # print(epoch, i, robust_ce.data[0], robust_err, ce.data[0], err)
-            endline = '\n' if ((i+1) % verbose == 0 or i==0) else '\r'
+              
+        if verbose and (i==0 or i==len(loader)-1 or (i+1) % verbose == 0) and not args.print: 
+            endline = '\n' if (i==0 or i==len(loader)-1 or (i+1) % verbose == 0) else '\r'
             print('Test: [{0}/{1}]\t'
                   'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
                   'L {loss.val:.4f} ({loss.avg:.4f})//'
@@ -319,6 +319,7 @@ class net_BCP(nn.Module):
         ibp_lb = torch.max(ibp_lb, ibp_lb1)
         ibp_mu = (ibp_ub+ibp_lb)/2
         ibp_r = (ibp_ub-ibp_lb)/2
+            
         
         mu = self._relu(mu)        
         r = r
@@ -426,7 +427,7 @@ def BCP_translation(mu_prev, r_prev, ibp_mu_prev, ibp_r_prev, W, opt_iter, show)
 
         in_sample = ((wi_wj1>lb)*(wi_wj1<ub)).type(torch.float) 
         enlarged_part = ratio*diag_zero*wi_wj1*in_sample 
-        
+
         new_wi_wj = (after_clipped + enlarged_part)
 
         inner_prod  = (wi_wj_rep*new_wi_wj).sum(-1)
@@ -506,7 +507,6 @@ def power_iteration_evl(A, num_simulations, u=None):
         u = torch.randn((A.size()[0],1)).cuda()
         
     B = A.t()
-    normAest = (A.abs().max()*A.abs().sum()).sqrt().data.cpu().numpy()
     for i in range(num_simulations):
         u1 = B.mm(u)
         u1_norm = u1.norm(2)
