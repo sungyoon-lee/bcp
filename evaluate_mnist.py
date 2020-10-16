@@ -20,19 +20,16 @@ import utils, data_load, BCP
 
 if __name__ == "__main__":
     args = utils.argparser(data='mnist',epsilon=1.58,epsilon_infty=0.1,epochs=60,rampup=20,wd_list=[21,30,40])
+    print(args)
     setproctitle.setproctitle(args.prefix)
-    train_log = open(args.prefix + "_train.log", "w")
     test_log = open(args.prefix + "_test.log", "w")
     
     _, test_loader = data_load.data_loaders(args.data, args.test_batch_size, args.normalization, args.augmentation, args.drop_last, args.shuffle)
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed(args.seed)
 
-        
-    args.opt_max = 10000
     args.print = True
     t = 100
-    print(args)
     
     aa = torch.load(args.test_pth)['state_dict'][0]
     model_eval = utils.select_model(args.data, args.model)
