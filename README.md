@@ -67,7 +67,7 @@ Our model achieves the following performance against _l_<sub>2</sub>-perturbatio
 <!----
 ![Results](./media/result_CIFAR.png)
 ---->
-<img src="./media/result_CIFAR.png" width="500">
+<img src="./media/CIFAR_results-1.png" width="500">
 
 ### MNIST (&epsilon;<sub>2</sub>=1.58)
 
