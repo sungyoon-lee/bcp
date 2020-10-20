@@ -15,7 +15,7 @@ __l__<sub>2</sub>-norm
 __l__<sub>p</sub>-norm, p>0
 ![Tightening](./media/Tightening.png)
 ---->
-<img src="./media/Tightening.png" width="500">
+<img src="./media/cifar_example.png" width="500">
 
 
 ## Requirements
