@@ -35,7 +35,8 @@ To train a certifiably robust model with the proposed method, run this command:
 python train_mnist.py
 python train_cifar10.py
 ```
-See `demo_cifar10.ipynb` for more details
+See `demo_cifar10.ipynb` for more details.
+The trained model will be saved in `./models/mnist/' or './models/cifar10`.
 
 
 ## Pre-trained Models
