@@ -103,6 +103,7 @@ Model2
 | BCP                |     28.76%         |      26.64%       | 20.08%  |
 
 # Citing this work
+```
 @article{lee2020lipschitz,
   title={Lipschitz-Certifiable Training with a Tight Outer Bound},
   author={Lee, Sungyoon and Lee, Jaewook and Park, Saerom},
@@ -110,5 +111,5 @@ Model2
   volume={33},
   year={2020}
 }
-
+```
 keywords: deep learning, robustness, adversarial examples, adversarial training, certified defense
