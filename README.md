@@ -1,4 +1,5 @@
 # Lipschitz-Certifiable Training with a Tight Outer Bound
+keywords: deep learning, robustness, adversarial examples, adversarial training, certified defense
 
 This repository is the official implementation of BCP (Box Constraint Propagation) by Sungyoon Lee, Jaewook Lee, and Saerom Park.
 
