@@ -84,7 +84,7 @@ Model1
 
 | Model name         | Standard  | PGD^100 | Verification  |
 | ------------------ |---------------- | -------------- | --------------  |
-| BCP                |     65.64         |      59.59%       | 50.27%  |
+| [BCP](https://papers.nips.cc/paper/2020/file/c46482dd5d39742f0bfd417b492d0e8e-Paper.pdf)                |     65.64         |      59.59%       | 50.27%  |
 | [CAP](https://arxiv.org/abs/1805.12514)                |     60.14%         |      55.67%       | 50.29%  |
 | [LMT](https://arxiv.org/abs/1802.04034)               |     56.49%         |      49.83%       | 37.20%  |
 
@@ -92,7 +92,7 @@ Model2
 
 | Model name         | Standard  | PGD^100 | Verification  |
 | ------------------ |---------------- | -------------- | --------------  |
-| BCP                |     65.72%         |      60.78%       | 51.30%  |
+| [BCP](https://papers.nips.cc/paper/2020/file/c46482dd5d39742f0bfd417b492d0e8e-Paper.pdf)                |     65.72%         |      60.78%       | 51.30%  |
 | [CAP](https://arxiv.org/abs/1805.12514)                |     60.10%         |      56.20%       | 50.87%  |
 | [LMT](https://arxiv.org/abs/1802.04034)               |     63.05%         |      58.32%       | 38.11%  |
 -->
