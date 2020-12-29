@@ -1,7 +1,7 @@
 # Lipschitz-Certifiable Training with a Tight Outer Bound
 keywords: deep learning, robustness, adversarial examples, adversarial training, certified defense
 
-This repository is the official implementation of BCP (Box Constraint Propagation) by Sungyoon Lee, Jaewook Lee, and Saerom Park.
+This repository is the official implementation of [BCP (Box Constraint Propagation)](https://papers.nips.cc/paper/2020/file/c46482dd5d39742f0bfd417b492d0e8e-Paper.pdf) by Sungyoon Lee, Jaewook Lee, and Saerom Park.
 
 BCP is a certified adversarial defense method against _l_<sub>2</sub>-norm (or _l_<sub>p</sub>-norm, p>0) bounded perturbations.
 It propagates a box constraint in addition to the Lipschitz outer bound to obtain a tighter outer bound.
