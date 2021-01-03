@@ -71,6 +71,8 @@ Our model achieves the following performance against _l_<sub>2</sub>-perturbatio
 ---->
 <img src="./media/CIFAR_results-1.png" width="500">
 
+vertical line: &epsilon;<sub>2</sub>=36/255
+
 ### MNIST (&epsilon;<sub>2</sub>=1.58)
 
 | Model name         | Standard  | PGD^100 | Verification  |
