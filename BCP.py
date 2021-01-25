@@ -228,7 +228,7 @@ class net_BCP(nn.Module):
                 ibp_r_prev = ibp_r
                 mu = self._linear(mu, layer.weight, layer.bias)
                 ibp_mu = self._linear(ibp_mu_prev, layer.weight.abs(), None)
-                
+#                 print('r',r_prev.mean())
                 return mu, mu_prev, r_prev, ibp_mu, ibp_mu_prev, ibp_r_prev, layer.weight, u_list
             
             if isinstance(layer, nn.Conv2d):
@@ -239,6 +239,8 @@ class net_BCP(nn.Module):
                 mu, r, ibp_mu, ibp_r = self.bcp_relu(layer, mu, r, ibp_mu, ibp_r, i)
             elif layer.__class__.__name__=='Flatten': #isinstance(layer, nn.Flatten):
                 mu, r, ibp_mu, ibp_r = self.bcp_flatten(layer, mu, r, ibp_mu, ibp_r, i)
+            elif isinstance(layer, nn.BatchNorm2d):
+                mu, r, ibp_mu, ibp_r = self.bcp_bacthnorm2d(layer, mu, r, ibp_mu, ibp_r, i)
 
     def bcp_conv2d(self, layer, mu, r, ibp_mu, ibp_r, i):
         ibp_mu = self._conv2d(ibp_mu, layer.weight, layer.bias, layer.stride, padding=layer.padding)
@@ -333,6 +335,43 @@ class net_BCP(nn.Module):
         r = r
         self.u_list[i] = 1
         return mu, r, ibp_mu, ibp_r
+
+    def bcp_bacthnorm2d(self, layer, mu, r, ibp_mu, ibp_r, i):
+        if layer.training:
+            mean = mu.mean(0).mean(-1).mean(-1).view(1,-1,1,1).detach()
+            var = ((mu-mean)**2).mean(0).mean(-1).mean(-1).view(1,-1,1,1).detach()
+        else:
+            mean = copy.deepcopy(layer.state_dict()['running_mean']).view(1,-1,1,1)
+            var = copy.deepcopy(layer.state_dict()['running_var']).view(1,-1,1,1)
+
+        scale = layer.state_dict()['weight']
+        bias = layer.state_dict()['bias']
+        bn_eps =  layer.eps
+
+        mu_after = self._batchnorm2d(mu, mean, var, scale, bias, bn_eps)
+        ww = scale*torch.rsqrt(var.view(-1)+bn_eps)
+
+        p = torch.max(torch.abs(ww))
+        ibp_mu1 = mu_after
+        ibp_r1 = r.view(-1,1,1,1)*ww.view(1,-1,1,1).abs() 
+        ibp_ub1 = ibp_mu1+ibp_r1
+        ibp_lb1 = ibp_mu1-ibp_r1
+
+        ibp_mu = self._batchnorm2d(ibp_mu, mean, var, scale, bias, bn_eps)
+        ibp_r = self._batchnorm2d(ibp_r, torch.zeros_like(mean), var, scale.abs(), torch.zeros_like(bias), bn_eps)
+        ibp_ub = ibp_mu+ibp_r
+        ibp_lb = ibp_mu-ibp_r
+
+        ibp_ub = torch.min(ibp_ub, ibp_ub1)
+        ibp_lb = torch.max(ibp_lb, ibp_lb1)
+        ibp_mu = (ibp_ub+ibp_lb)/2
+        ibp_r = (ibp_ub-ibp_lb)/2
+        self.u_list[i] = 1
+
+        r = r*p
+        mu = mu_after    
+                
+        return mu, r, ibp_mu, ibp_r
     
     def _conv2d(self,x,w,b,stride=1,padding=0):
         return F.conv2d(x, w,bias=b, stride=stride, padding=padding)
@@ -364,6 +403,7 @@ class net_BCP(nn.Module):
         bias = bias.repeat(x.size()[0], 1,x.size()[2], x.size()[3])
         
         multiplier = torch.rsqrt(var+bn_eps)*weight ### rsqrt=1/sqrt
+
         b = -multiplier*mean + bias
         y = multiplier*x
         y+=b
