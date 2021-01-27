@@ -32,9 +32,9 @@ if __name__ == "__main__":
     t = 100
     
     try:
-        aa = torch.load(args.test_pth,map_location='cuda:0')['state_dict'][0]
+        aa = torch.load(args.test_pth,map_location='cuda:'+str(args.cuda_ids))['state_dict'][0]
     except:
-        aa = torch.load(args.test_pth,map_location='cuda:0')['state_dict']
+        aa = torch.load(args.test_pth,map_location='cuda:'+str(args.cuda_ids))['state_dict']
     model_eval = utils.select_model(args.data, args.model)
     model_eval.load_state_dict(aa)
     print('std testing ...')
