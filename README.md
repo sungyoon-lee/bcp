@@ -43,15 +43,17 @@ The trained model will be saved in `./models/mnist/` or `./models/cifar10`.
 ## Pre-trained Models
 
 You can download pretrained models here:
-
-- [BCP model](https://drive.google.com/file/d/17MsumEnGQvpMQaXMXRZK4xK8mpnO0oRz/view?usp=sharing) trained on MNIST.
-- [BCP model](https://drive.google.com/file/d/1MuXNJ63_HwzKtBMrRlvrLGIzD3FhH-Ov/view?usp=sharing) trained on CIFAR-10.
-
-
+- [BCP model](https://github.com/sungyoon-lee/bcp/blob/master/pretrained/mnist_save.pth)trained on MNIST.
+- [BCP model](https://github.com/sungyoon-lee/bcp/blob/master/pretrained/cifar10_save.pth)trained on CIFAR-10.
+<!----
+https://drive.google.com/file/d/17MsumEnGQvpMQaXMXRZK4xK8mpnO0oRz/view?usp=sharing) 
+(https://drive.google.com/file/d/1MuXNJ63_HwzKtBMrRlvrLGIzD3FhH-Ov/view?usp=sharing) 
+---->
 
 ## Evaluation of pretrained models
-
+<!----
 After downloading the pretrained models to the directory `./pretrained`, you are ready to evaluate them.
+---->
 To evaluate the pretrained model, run:
 
 ```eval
